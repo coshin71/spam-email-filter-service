@@ -1,18 +1,17 @@
 package hello.spamemailfilterservice.dto;
 
-import hello.spamemailfilterservice.model.User;
-import lombok.AllArgsConstructor;
+import hello.spamemailfilterservice.entity.User;
 import lombok.Data;
 
 @Data
 public class UserDto {
 
-    private String loginId;
+    private String username;
     private String password;
 
     public User toEntity() {
         return User.builder()
-                .loginId(loginId)
+                .username(username)
                 .password(password)
                 .build();
     }

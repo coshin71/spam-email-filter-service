@@ -1,7 +1,7 @@
 package hello.spamemailfilterservice.service;
 
 import hello.spamemailfilterservice.dto.UserDto;
-import hello.spamemailfilterservice.model.User;
+import hello.spamemailfilterservice.entity.User;
 import hello.spamemailfilterservice.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
