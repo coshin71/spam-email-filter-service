@@ -1,4 +1,4 @@
-package hello.spamemailfilterservice.model;
+package hello.spamemailfilterservice.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -21,7 +21,7 @@ public class User {
     @GeneratedValue
     @Column(name = "USER_ID")
     private Long id;
-    private String loginId;
+    private String username;
     private String password;
 }
 
