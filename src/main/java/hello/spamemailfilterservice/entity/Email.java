@@ -34,5 +34,5 @@ public class Email {
     private EmailType emailType;
 
     @CreationTimestamp
-    private Timestamp sendDate;
+    private Timestamp time;
 }
