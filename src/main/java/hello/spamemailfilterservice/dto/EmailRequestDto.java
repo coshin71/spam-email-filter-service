@@ -5,7 +5,7 @@ import hello.spamemailfilterservice.entity.Email;
 import lombok.Data;
 
 @Data
-public class EmailDto {
+public class EmailRequestDto {
 
     private String title;
 
