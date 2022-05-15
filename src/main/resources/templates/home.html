@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link href="css/bootstrap.min.css"
+          rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <style>
+        .container {
+            max-width: 1200px;
+        }
+
+        table {
+            width: 100%;
+            border: 1px solid #444444;
+            border-collapse: collapse;
+            table-layout: fixed;
+            word-break: break-all;
+        }
+
+        th, td {
+            border: 1px solid #444444;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <button style="color: #fff; background:deepskyblue; font-size:2em; border-radius:0.5em; padding:5px 20px;"
+                    th:onclick="|location.href='@{/emails/write}'|" type="button">
+                이메일 쓰기
+            </button>
+        </div>
+    </div>
+    <hr style="height:5px;border:none;">
+</div>
+<div class="container">
+    <table>
+        <tr>
+            <th width="25%">보낸이</th>
+            <th>제목</th>
+            <th>시간</th>
+        </tr>
+        <tr th:each="email : ${emails}">
+            <td th:text="${email.sender}">ID</td>
+            <td><a th:href="@{/emails/{emailId}(emailId=${email.id})}" th:text="${email.title}">제목</a></td>
+            <td th:text="${email.time}">시간</td>
+        </tr>
+    </table>
+</div>
+<br>
+<ul class="pagination justify-content-center">
+    <li class="page-item disabled"><a class="page-link" th:href="@{/(page=${emails.number-1})}" th:if="${emails.first}">이전</a>
+    </li>
+    <li class="page-item"><a class="page-link" th:href="@{/(page=${emails.number-1})}"
+                             th:unless="${emails.first}">이전</a></li>
+    <li class="page-item disabled"><a class="page-link" th:href="@{/(page=${emails.number+1})}" th:if="${emails.last}">다음</a>
+    </li>
+    <li class="page-item"><a class="page-link" th:href="@{/(page=${emails.number+1})}" th:unless="${emails.last}">다음</a>
+    </li>
+</ul>
+</body>
+</html>
