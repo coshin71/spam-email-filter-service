@@ -13,7 +13,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
-
 @Service
 @RequiredArgsConstructor
 public class EmailService {
@@ -27,6 +26,14 @@ public class EmailService {
         Page<EmailResponseDto> emailDtos = emails.map(email ->
                 new EmailResponseDto(email.getId(), email.getTitle(), email.getContent(), email.getSender(), format.format(email.getTime())));
         return emailDtos;
+    }
+
+    @Transactional(readOnly = true)
+    public EmailResponseDto viewEmail(Long emailId) {
+        Email email = emailRepository.findById(emailId).orElseThrow();
+        DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        EmailResponseDto emailDto = new EmailResponseDto(email.getTitle(), email.getContent(), email.getSender(), format.format(email.getTime()));
+        return emailDto;
     }
 
     @Transactional

@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link href="css/bootstrap.min.css"
+          rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <style>
+        .container {
+            max-width: 1200px;
+        }
+
+        table {
+            width: 100%;
+            border: 1px solid #444444;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #444444;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <button style="color: #fff; background:deepskyblue; font-size:2em; border-radius:0.5em; padding:5px 20px;" th:onclick="|location.href='@{/emails/{emailId}/delete(emailsId=${email.id})}'|"
+                    type="button">
+                삭제하기
+            </button>
+            <button onclick="javascript:window.history.back();"
+                    style="color: #fff; background:deepskyblue; font-size:2em; border-radius:0.5em; padding:5px 20px;" type="button">
+                뒤로가기
+            </button>
+        </div>
+    </div>
+    <hr style="height:5px;border:none;">
+</div>
+<div class="container">
+    <h5 th:text="|시간 : ${email.time}|">시간</h5>
+</div>
+<div class="container">
+    <h5 th:text="|보낸이 : ${email.sender}|">보낸이</h5>
+</div>
+<div class="container">
+    <h2 th:text="|제목 : ${email.title}|">제목</h2>
+</div>
+
+<div class="container">
+    <hr/>
+    <div th:text="${email.content}">내용</div>
+</div>
