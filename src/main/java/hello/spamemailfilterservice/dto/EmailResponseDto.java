@@ -16,4 +16,11 @@ public class EmailResponseDto {
     private String sender;
 
     private String time;
+
+    public EmailResponseDto(String title, String content, String sender, String time) {
+        this.title = title;
+        this.content = content;
+        this.sender = sender;
+        this.time = time;
+    }
 }
