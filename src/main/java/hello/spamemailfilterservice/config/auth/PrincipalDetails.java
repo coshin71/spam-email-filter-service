@@ -1,11 +1,13 @@
 package hello.spamemailfilterservice.config.auth;
 
 import hello.spamemailfilterservice.entity.User;
+import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 
+@Data
 public class PrincipalDetails implements UserDetails {
 
     private User user;
