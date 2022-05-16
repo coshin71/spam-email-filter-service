@@ -19,10 +19,14 @@ public class EmailController {
 
     private final EmailService emailService;
 
-    @GetMapping("/emails")
+    @GetMapping("/")
     public String home(@AuthenticationPrincipal PrincipalDetails principalDetails,
                        @PageableDefault(size = 10, sort = "id", direction = Sort.Direction.DESC) Pageable pageable,
                        Model model) {
+        if (principalDetails == null) {
+            return "redirect:/loginForm";
+        }
+
         model.addAttribute("emails", emailService.listEmails(pageable, principalDetails.getUsername()));
 
         return "home";
