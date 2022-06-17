@@ -2,7 +2,6 @@ package hello.spamemailfilterservice.controller;
 
 import hello.spamemailfilterservice.config.auth.PrincipalDetails;
 import hello.spamemailfilterservice.dto.EmailRequestDto;
-import hello.spamemailfilterservice.dto.EmailResponseDto;
 import hello.spamemailfilterservice.service.EmailService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
