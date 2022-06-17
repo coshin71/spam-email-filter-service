@@ -24,6 +24,7 @@ public class Email {
 
     private String title;
 
+    @Column(length = 2000)
     private String content;
 
     private String sender;
