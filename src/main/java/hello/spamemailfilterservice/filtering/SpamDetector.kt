@@ -1,10 +1,10 @@
 package hello.spamemailfilterservice.filtering
 
-import hello.spamemailfilterservice.filtering.excel.ExcelReader
 import hangeul.Hangeul
 import hello.spamemailfilterservice.filtering.candidate.CandidateSearcher
 import hello.spamemailfilterservice.filtering.data.Data
 import hello.spamemailfilterservice.filtering.dictionary.AssetDataDictionary
+import hello.spamemailfilterservice.filtering.excel.ExcelReader
 import java.io.File
 
 class SpamDetector {

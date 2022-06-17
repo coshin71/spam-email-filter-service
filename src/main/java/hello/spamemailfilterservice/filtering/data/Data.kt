@@ -1,8 +1,8 @@
 package hello.spamemailfilterservice.filtering.data
 
+import hangeul.Hangeul
 import hello.spamemailfilterservice.filtering.candidate.CandidateSearcher
 import hello.spamemailfilterservice.filtering.dictionary.AssetDataDictionary
-import hangeul.Hangeul
 
 class Data(var type: Type = Type.SPAM, var content: String = "") {
     enum class Type {

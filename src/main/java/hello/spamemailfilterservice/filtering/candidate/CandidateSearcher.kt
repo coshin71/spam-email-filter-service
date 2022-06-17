@@ -1,10 +1,10 @@
 package hello.spamemailfilterservice.filtering.candidate
 
+import hangeul.Hangeul
+import hangeul.HangeulException
 import hello.spamemailfilterservice.filtering.component.Component
 import hello.spamemailfilterservice.filtering.component.Word
 import hello.spamemailfilterservice.filtering.dictionary.Dictionary
-import hangeul.Hangeul
-import hangeul.HangeulException
 
 class CandidateSearcher(
     private val dictionary: Dictionary,

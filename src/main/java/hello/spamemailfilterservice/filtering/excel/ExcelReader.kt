@@ -9,7 +9,7 @@ object ExcelReader {
 
     fun xlsToDataList(filePath: String): List<Data> {
         val dataList = mutableListOf<Data>()
-        val inputStream = FileInputStream(filePath);
+        val inputStream = FileInputStream(filePath)
         val workBook = XSSFWorkbook(inputStream)
 
         repeat(workBook.numberOfSheets) { sheetIndex ->
