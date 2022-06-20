@@ -19,7 +19,6 @@ class SpamDetector {
 
     fun init(filePath: String) {
         val _filePath = File("").absoluteFile
-        System.out.println("[!!!!!!!!!] $_filePath")
         dataList = ExcelReader.xlsToDataList(filePath)
         wordGroupList =
             dataList.groupBy { it.type }.map { it.key to it.value.map { it.subtractNouns(dictionary) }.flatten() }

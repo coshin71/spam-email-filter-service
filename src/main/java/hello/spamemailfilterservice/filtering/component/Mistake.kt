@@ -13,7 +13,6 @@ class Mistake(val reason: String, val type: String) {
     private var isWrong = true
 
     fun setConfuses(vararg cases: String) {
-        println("Mistake $type is WRONG!!!!!!!!!!!!!!\n\n")
         isWrong = false
         confuses = ArrayList()
         for (c in cases) confuses.add(c)
